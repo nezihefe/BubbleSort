@@ -1,0 +1,42 @@
+# include <stdio.h>
+# include <time.h>
+int  main () {
+
+  int  s, sıcaklık, i, j, k, dizi [ 10000 ] ;
+  int  karsilastirma = 0, yerdegistirme = 0;
+  printf ("Dizinin  eleman  sayisini girin  :");
+  scanf ( "% d" ve s);
+
+
+  srand (zaman (NULL));
+  (k = 0, k <s, k ++) {
+                   dizi [ k ] = rand ()% 100;
+  }
+
+  // Kabarcık  Sıralama  Algoritması
+  clock_t  başlangıç  =  saat ();
+  (İ = s-2, i> = 0; i -) için {
+      (j = 0; j <i = j ++) {
+            karşılastırma + = 1 'dir;
+           if (dizi [ j ] > dizi [ j + 1 ] ) {
+               temp = dizi [ j ] ;
+              dizi [ j ] = dizi [ j + 1 ] ;
+              dizi [ j + 1 ] = sıcaklık;
+              yerdegistirme + = 1 'dir;
+           }
+      }
+  }
+  clock_t  dur  =  saat ();
+    çift  geçen  =  (çift) (durdur  -  başlat)  *  1000.0 / CLOCKS_PER_SEC;
+
+
+  printf ("Şıralı  Halı:  ");
+  için (i <s, i = 0 i ++)
+      printf ("  % d \ n ", dizi [ i ] );
+
+printf ("Gecen  emin:  % f \ n ",  geçen);
+printf ("karsilastirma =  % d \ n ", karsilastirma);
+printf ("yerdegistirme =  % d \ n ", yerdegistirme);
+
+  dönüş  0;
+}
